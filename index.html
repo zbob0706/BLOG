@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Developer Blog | Programming and Technology Insights</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 85%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* Header styles */
+        header {
+            background-color: #2c3e50;
+            color: #fff;
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 1.5rem;
+        }
+        
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #3498db;
+        }
+        
+        /* Hero section */
+        .hero {
+            background-color: #3498db;
+            color: white;
+            text-align: center;
+            padding: 4rem 0;
+            margin-bottom: 2rem;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Main content layout */
+        .content-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        
+        main {
+            flex: 3;
+            min-width: 60%;
+        }
+        
+        aside {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        /* Blog post styles */
+        .post {
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+            overflow: hidden;
+        }
+        
+        .post-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .post-content {
+            padding: 1.5rem;
+        }
+        
+        .post-meta {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .post h2 {
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+        
+        .post p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .read-more {
+            display: inline-block;
+            background-color: #3498db;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 3px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        
+        .read-more:hover {
+            background-color: #2980b9;
+        }
+        
+        /* Sidebar styles */
+        .sidebar-widget {
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .sidebar-widget h3 {
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+        
+        .categories-list, .recent-posts-list {
+            list-style: none;
+        }
+        
+        .categories-list li, .recent-posts-list li {
+            margin-bottom: 0.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .categories-list a, .recent-posts-list a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        
+        .categories-list a:hover, .recent-posts-list a:hover {
+            color: #2980b9;
+        }
+        
+        /* Newsletter signup */
+        .newsletter-form input[type="email"] {
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+        }
+        
+        .newsletter-form button {
+            background-color: #2c3e50;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .newsletter-form button:hover {
+            background-color: #1a252f;
+        }
+        
+        /* Footer styles */
+        footer {
+            background-color: #2c3e50;
+            color: #fff;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 1rem;
+        }
+        
+        .footer-section p, .footer-section li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .social-links {
+            list-style: none;
+            display: flex;
+        }
+        
+        .social-links li {
+            margin-right: 1rem;
+        }
+        
+        .copyright {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid #3a546a;
+        }
+        
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .content-wrapper {
+                flex-direction: column;
+            }
+            
+            main, aside {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">DevBlog</div>
+                <ul class="nav-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Articles</a></li>
+                    <li><a href="#">Tutorials</a></li>
+                    <li><a href="#">Projects</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="container">
+            <h1>Welcome to My Technical Blog</h1>
+            <p>Sharing knowledge and experiences in software development, GIS technology, and more</p>
+        </div>
+    </section>
+    
+    <div class="container">
+        <div class="content-wrapper">
+            <main>
+                <article class="post">
+                    <img src="https://via.placeholder.com/800x400" alt="Blog Post Image" class="post-image">
+                    <div class="post-content">
+                        <div class="post-meta">October 22, 2024 | Web Development</div>
+                        <h2>Building Responsive Web Applications with Modern JavaScript Frameworks</h2>
+                        <p>Modern JavaScript frameworks have revolutionized how we build web applications. In this article, we'll explore the most popular frameworks like React, Vue, and Angular, comparing their strengths and use cases to help you choose the right one for your next project.</p>
+                        <p>We'll cover component-based architecture, state management patterns, and performance optimization techniques that apply across all major frameworks.</p>
+                        <a href="#" class="read-more">Continue Reading</a>
+                    </div>
+                </article>
+                
+                <article class="post">
+                    <img src="https://via.placeholder.com/800x400" alt="Blog Post Image" class="post-image">
+                    <div class="post-content">
+                        <div class="post-meta">October 18, 2024 | GIS Technology</div>
+                        <h2>Integrating GIS Applications with Modern Web Technologies</h2>
+                        <p>Geographic Information Systems (GIS) have evolved significantly with web technologies. This article demonstrates how to build interactive mapping applications using libraries like Leaflet and OpenLayers combined with modern backend services.</p>
+                        <p>Learn how to efficiently process and visualize spatial data in browser-based applications while maintaining performance and usability.</p>
+                        <a href="#" class="read-more">Continue Reading</a>
+                    </div>
+                </article>
+                
+                <article class="post">
+                    <img src="https://via.placeholder.com/800x400" alt="Blog Post Image" class="post-image">
+                    <div class="post-content">
+                        <div class="post-meta">October 15, 2024 | Cloud Services</div>
+                        <h2>Getting Started with AWS: A Practical Guide for Developers</h2>
+                        <p>Amazon Web Services offers a vast array of cloud solutions that can be overwhelming for beginners. This practical guide will walk you through the essential services every developer should know, including EC2, S3, Lambda, and DynamoDB.</p>
+                        <p>By the end of this article, you'll understand how to architect scalable and cost-effective solutions using AWS's core services.</p>
+                        <a href="#" class="read-more">Continue Reading</a>
+                    </div>
+                </article>
+            </main>
+            
+            <aside>
+                <div class="sidebar-widget">
+                    <h3>About Me</h3>
+                    <p>Hi, I'm Bob Zheng, a software engineer with a background in electrical engineering and finance. This blog shares my journey in software development, GIS technology, and cloud services.</p>
+                </div>
+                
+                <div class="sidebar-widget">
+                    <h3>Categories</h3>
+                    <ul class="categories-list">
+                        <li><a href="#">Web Development (12)</a></li>
+                        <li><a href="#">GIS Technology (8)</a></li>
+                        <li><a href="#">Cloud Services (6)</a></li>
+                        <li><a href="#">Python Programming (15)</a></li>
+                        <li><a href="#">Database Design (5)</a></li>
+                        <li><a href="#">Financial Technology (4)</a></li>
+                    </ul>
+                </div>
+                
+                <div class="sidebar-widget">
+                    <h3>Recent Posts</h3>
+                    <ul class="recent-posts-list">
+                        <li><a href="#">Building Responsive Web Applications</a></li>
+                        <li><a href="#">Integrating GIS Applications</a></li>
+                        <li><a href="#">Getting Started with AWS</a></li>
+                        <li><a href="#">Python Best Practices for Performance</a></li>
+                        <li><a href="#">Database Schema Design Patterns</a></li>
+                    </ul>
+                </div>
+                
+                <div class="sidebar-widget">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to receive updates on new articles and resources.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email address">
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </aside>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About DevBlog</h3>
+                    <p>A personal blog focused on software development, GIS technology, and professional growth in the tech industry.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Articles</a></li>
+                        <li><a href="#">Projects</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <ul class="social-links">
+                        <li><a href="#">GitHub</a></li>
+                        <li><a href="#">LinkedIn</a></li>
+                        <li><a href="#">Twitter</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2024 DevBlog. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
