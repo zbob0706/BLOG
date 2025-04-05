@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tech Developer Blog | Programming and Technology Insights</title>
+    <title>Bob Zheng | 项目作品集</title>
     <style>
         * {
             box-sizing: border-box;
@@ -13,7 +13,7 @@
         }
         
         body {
-            background-color: #f5f5f5;
+            background-color: #f8f9fa;
             color: #333;
             line-height: 1.6;
         }
@@ -26,10 +26,13 @@
         
         /* Header styles */
         header {
-            background-color: #2c3e50;
+            background-color: #24292e;
             color: #fff;
             padding: 1rem 0;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
         
         nav {
@@ -41,6 +44,15 @@
         .logo {
             font-size: 1.8rem;
             font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
         }
         
         .nav-links {
@@ -56,159 +68,274 @@
             color: #fff;
             text-decoration: none;
             transition: color 0.3s;
+            font-weight: 500;
         }
         
         .nav-links a:hover {
-            color: #3498db;
+            color: #58a6ff;
         }
         
         /* Hero section */
         .hero {
-            background-color: #3498db;
+            background: linear-gradient(135deg, #24292e 0%, #0366d6 100%);
             color: white;
             text-align: center;
-            padding: 4rem 0;
+            padding: 5rem 0;
             margin-bottom: 2rem;
         }
         
         .hero h1 {
-            font-size: 2.5rem;
+            font-size: 3rem;
             margin-bottom: 1rem;
         }
         
         .hero p {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto 1.5rem auto;
+        }
+        
+        .hero-buttons {
+            margin-top: 2rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            margin: 0 0.5rem;
+        }
+        
+        .btn-primary {
+            background-color: #fff;
+            color: #24292e;
+        }
+        
+        .btn-primary:hover {
+            background-color: #f0f0f0;
+            transform: translateY(-3px);
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            color: #fff;
+            border: 2px solid #fff;
+        }
+        
+        .btn-secondary:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-3px);
+        }
+        
+        /* Project section styles */
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #24292e;
+        }
+        
+        .section-title h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .section-title p {
+            font-size: 1.1rem;
             max-width: 700px;
             margin: 0 auto;
+            color: #666;
         }
         
-        /* Main content layout */
-        .content-wrapper {
-            display: flex;
-            flex-wrap: wrap;
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
             gap: 2rem;
+            margin-bottom: 3rem;
         }
         
-        main {
-            flex: 3;
-            min-width: 60%;
-        }
-        
-        aside {
-            flex: 1;
-            min-width: 250px;
-        }
-        
-        /* Blog post styles */
-        .post {
+        .project-card {
             background-color: white;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            margin-bottom: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
             overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
         }
         
-        .post-image {
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .project-image {
             width: 100%;
-            height: 250px;
+            height: 200px;
             object-fit: cover;
         }
         
-        .post-content {
+        .project-content {
             padding: 1.5rem;
         }
         
-        .post-meta {
-            color: #666;
-            font-size: 0.9rem;
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+        }
+        
+        .project-tag {
+            background-color: #f1f8ff;
+            color: #0366d6;
+            padding: 0.3rem 0.7rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-right: 0.5rem;
             margin-bottom: 0.5rem;
         }
         
-        .post h2 {
+        .project-card h3 {
             margin-bottom: 1rem;
-            color: #2c3e50;
+            color: #24292e;
+            font-size: 1.4rem;
         }
         
-        .post p {
+        .project-card p {
             margin-bottom: 1.5rem;
+            color: #555;
         }
         
-        .read-more {
+        .project-links {
+            display: flex;
+        }
+        
+        .project-link {
             display: inline-block;
-            background-color: #3498db;
+            background-color: #24292e;
             color: white;
             padding: 0.5rem 1rem;
-            border-radius: 3px;
+            border-radius: 4px;
             text-decoration: none;
             transition: background-color 0.3s;
+            margin-right: 1rem;
+            font-size: 0.9rem;
         }
         
-        .read-more:hover {
-            background-color: #2980b9;
+        .project-link:hover {
+            background-color: #0366d6;
         }
         
-        /* Sidebar styles */
-        .sidebar-widget {
+        /* Skills section */
+        .skills-section {
+            background-color: #f1f8ff;
+            padding: 4rem 0;
+            margin: 3rem 0;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+        
+        .skill-category {
             background-color: white;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-radius: 8px;
             padding: 1.5rem;
-            margin-bottom: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
         
-        .sidebar-widget h3 {
+        .skill-category h3 {
             margin-bottom: 1rem;
-            color: #2c3e50;
+            color: #24292e;
+            text-align: center;
+            font-size: 1.2rem;
         }
         
-        .categories-list, .recent-posts-list {
+        .skill-list {
             list-style: none;
         }
         
-        .categories-list li, .recent-posts-list li {
+        .skill-list li {
             margin-bottom: 0.5rem;
             padding-bottom: 0.5rem;
             border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
         }
         
-        .categories-list a, .recent-posts-list a {
-            color: #3498db;
-            text-decoration: none;
+        .skill-list li:last-child {
+            border-bottom: none;
         }
         
-        .categories-list a:hover, .recent-posts-list a:hover {
-            color: #2980b9;
+        .skill-list li::before {
+            content: "•";
+            color: #0366d6;
+            margin-right: 0.5rem;
+            font-weight: bold;
         }
         
-        /* Newsletter signup */
-        .newsletter-form input[type="email"] {
+        /* Contact section */
+        .contact-section {
+            text-align: center;
+            padding: 3rem 0;
+        }
+        
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .form-group input, 
+        .form-group textarea {
             width: 100%;
-            padding: 0.5rem;
-            margin-bottom: 1rem;
+            padding: 0.8rem;
             border: 1px solid #ddd;
-            border-radius: 3px;
+            border-radius: 4px;
+            font-size: 1rem;
         }
         
-        .newsletter-form button {
-            background-color: #2c3e50;
+        .form-group textarea {
+            min-height: 150px;
+        }
+        
+        .submit-btn {
+            background-color: #24292e;
             color: white;
             border: none;
-            padding: 0.5rem 1rem;
-            border-radius: 3px;
+            padding: 0.8rem 2rem;
+            border-radius: 4px;
             cursor: pointer;
             transition: background-color 0.3s;
+            font-size: 1rem;
+            font-weight: 500;
         }
         
-        .newsletter-form button:hover {
-            background-color: #1a252f;
+        .submit-btn:hover {
+            background-color: #0366d6;
         }
         
         /* Footer styles */
         footer {
-            background-color: #2c3e50;
+            background-color: #24292e;
             color: #fff;
             padding: 2rem 0;
-            margin-top: 3rem;
         }
         
         .footer-content {
@@ -225,10 +352,14 @@
         
         .footer-section h3 {
             margin-bottom: 1rem;
+            font-size: 1.2rem;
         }
         
-        .footer-section p, .footer-section li {
+        .footer-section p, 
+        .footer-section li {
             margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            color: #ccc;
         }
         
         .social-links {
@@ -240,11 +371,23 @@
             margin-right: 1rem;
         }
         
+        .social-links a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: #58a6ff;
+        }
+        
         .copyright {
             text-align: center;
             margin-top: 2rem;
             padding-top: 1rem;
-            border-top: 1px solid #3a546a;
+            border-top: 1px solid #3a3f43;
+            font-size: 0.9rem;
+            color: #ccc;
         }
         
         /* Responsive design */
@@ -253,12 +396,20 @@
                 display: none;
             }
             
-            .content-wrapper {
-                flex-direction: column;
+            .projects-grid {
+                grid-template-columns: 1fr;
             }
             
-            main, aside {
-                width: 100%;
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
             }
         }
     </style>
@@ -267,14 +418,15 @@
     <header>
         <div class="container">
             <nav>
-                <div class="logo">DevBlog</div>
+                <div class="logo">
+                    <img src="https://github.com/identicons/bob.png" alt="Bob Zheng">
+                    Bob Zheng
+                </div>
                 <ul class="nav-links">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Articles</a></li>
-                    <li><a href="#">Tutorials</a></li>
-                    <li><a href="#">Projects</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="#projects">项目</a></li>
+                    <li><a href="#skills">技能</a></li>
+                    <li><a href="about/index.html">关于我</a></li>
+                    <li><a href="#contact">联系方式</a></li>
                 </ul>
             </nav>
         </div>
@@ -282,119 +434,208 @@
     
     <section class="hero">
         <div class="container">
-            <h1>Welcome to My Technical Blog</h1>
-            <p>Sharing knowledge and experiences in software development, GIS technology, and more</p>
+            <h1>欢迎来到我的项目展示页</h1>
+            <p>我是一名软件工程师，专注于软件开发、GIS技术和云服务</p>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn btn-primary">查看项目</a>
+                <a href="#contact" class="btn btn-secondary">联系我</a>
+            </div>
         </div>
     </section>
     
     <div class="container">
-        <div class="content-wrapper">
-            <main>
-                <article class="post">
-                    <img src="https://via.placeholder.com/800x400" alt="Blog Post Image" class="post-image">
-                    <div class="post-content">
-                        <div class="post-meta">October 22, 2024 | Web Development</div>
-                        <h2>Building Responsive Web Applications with Modern JavaScript Frameworks</h2>
-                        <p>Modern JavaScript frameworks have revolutionized how we build web applications. In this article, we'll explore the most popular frameworks like React, Vue, and Angular, comparing their strengths and use cases to help you choose the right one for your next project.</p>
-                        <p>We'll cover component-based architecture, state management patterns, and performance optimization techniques that apply across all major frameworks.</p>
-                        <a href="#" class="read-more">Continue Reading</a>
-                    </div>
-                </article>
-                
-                <article class="post">
-                    <img src="https://via.placeholder.com/800x400" alt="Blog Post Image" class="post-image">
-                    <div class="post-content">
-                        <div class="post-meta">October 18, 2024 | GIS Technology</div>
-                        <h2>Integrating GIS Applications with Modern Web Technologies</h2>
-                        <p>Geographic Information Systems (GIS) have evolved significantly with web technologies. This article demonstrates how to build interactive mapping applications using libraries like Leaflet and OpenLayers combined with modern backend services.</p>
-                        <p>Learn how to efficiently process and visualize spatial data in browser-based applications while maintaining performance and usability.</p>
-                        <a href="#" class="read-more">Continue Reading</a>
-                    </div>
-                </article>
-                
-                <article class="post">
-                    <img src="https://via.placeholder.com/800x400" alt="Blog Post Image" class="post-image">
-                    <div class="post-content">
-                        <div class="post-meta">October 15, 2024 | Cloud Services</div>
-                        <h2>Getting Started with AWS: A Practical Guide for Developers</h2>
-                        <p>Amazon Web Services offers a vast array of cloud solutions that can be overwhelming for beginners. This practical guide will walk you through the essential services every developer should know, including EC2, S3, Lambda, and DynamoDB.</p>
-                        <p>By the end of this article, you'll understand how to architect scalable and cost-effective solutions using AWS's core services.</p>
-                        <a href="#" class="read-more">Continue Reading</a>
-                    </div>
-                </article>
-            </main>
+        <section id="projects">
+            <div class="section-title">
+                <h2>我的项目</h2>
+                <p>以下是我最近完成的一些项目作品</p>
+            </div>
             
-            <aside>
-                <div class="sidebar-widget">
-                    <h3>About Me</h3>
-                    <p>Hi, I'm Bob Zheng, a software engineer with a background in electrical engineering and finance. This blog shares my journey in software development, GIS technology, and cloud services.</p>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/600x400?text=Web+Application" alt="Project Image" class="project-image">
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag">React</span>
+                            <span class="project-tag">Node.js</span>
+                            <span class="project-tag">MongoDB</span>
+                        </div>
+                        <h3>响应式Web应用开发</h3>
+                        <p>基于现代JavaScript框架构建的响应式Web应用程序，实现了组件化架构和高效的状态管理。</p>
+                        <div class="project-links">
+                            <a href="projects/web-app.html" class="project-link">查看详情</a>
+                            <a href="https://github.com/" target="_blank" class="project-link">源代码</a>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="sidebar-widget">
-                    <h3>Categories</h3>
-                    <ul class="categories-list">
-                        <li><a href="#">Web Development (12)</a></li>
-                        <li><a href="#">GIS Technology (8)</a></li>
-                        <li><a href="#">Cloud Services (6)</a></li>
-                        <li><a href="#">Python Programming (15)</a></li>
-                        <li><a href="#">Database Design (5)</a></li>
-                        <li><a href="#">Financial Technology (4)</a></li>
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/600x400?text=GIS+Application" alt="Project Image" class="project-image">
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag">Leaflet</span>
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">PostgreSQL</span>
+                        </div>
+                        <h3>GIS应用与Web技术集成</h3>
+                        <p>结合现代Web技术开发的地理信息系统应用，实现了交互式地图功能和高效的空间数据处理。</p>
+                        <div class="project-links">
+                            <a href="projects/gis-app.html" class="project-link">查看详情</a>
+                            <a href="https://github.com/" target="_blank" class="project-link">源代码</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/600x400?text=Cloud+Services" alt="Project Image" class="project-image">
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag">AWS</span>
+                            <span class="project-tag">Lambda</span>
+                            <span class="project-tag">DynamoDB</span>
+                        </div>
+                        <h3>云服务应用实践</h3>
+                        <p>基于AWS云平台开发的可扩展解决方案，使用了EC2、S3、Lambda和DynamoDB等核心服务。</p>
+                        <div class="project-links">
+                            <a href="projects/cloud-services.html" class="project-link">查看详情</a>
+                            <a href="https://github.com/" target="_blank" class="project-link">源代码</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <section id="skills" class="skills-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>技能专长</h2>
+                <p>我的技术栈和专业领域</p>
+            </div>
+            
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>前端开发</h3>
+                    <ul class="skill-list">
+                        <li>HTML/CSS/JavaScript</li>
+                        <li>React.js</li>
+                        <li>Vue.js</li>
+                        <li>响应式设计</li>
+                        <li>Web性能优化</li>
                     </ul>
                 </div>
                 
-                <div class="sidebar-widget">
-                    <h3>Recent Posts</h3>
-                    <ul class="recent-posts-list">
-                        <li><a href="#">Building Responsive Web Applications</a></li>
-                        <li><a href="#">Integrating GIS Applications</a></li>
-                        <li><a href="#">Getting Started with AWS</a></li>
-                        <li><a href="#">Python Best Practices for Performance</a></li>
-                        <li><a href="#">Database Schema Design Patterns</a></li>
+                <div class="skill-category">
+                    <h3>后端开发</h3>
+                    <ul class="skill-list">
+                        <li>Node.js</li>
+                        <li>Python</li>
+                        <li>Java</li>
+                        <li>RESTful API设计</li>
+                        <li>微服务架构</li>
                     </ul>
                 </div>
                 
-                <div class="sidebar-widget">
-                    <h3>Newsletter</h3>
-                    <p>Subscribe to receive updates on new articles and resources.</p>
-                    <form class="newsletter-form">
-                        <input type="email" placeholder="Your email address">
-                        <button type="submit">Subscribe</button>
-                    </form>
+                <div class="skill-category">
+                    <h3>数据库</h3>
+                    <ul class="skill-list">
+                        <li>PostgreSQL</li>
+                        <li>MongoDB</li>
+                        <li>MySQL</li>
+                        <li>Redis</li>
+                        <li>数据库设计</li>
+                    </ul>
                 </div>
-            </aside>
+                
+                <div class="skill-category">
+                    <h3>GIS技术</h3>
+                    <ul class="skill-list">
+                        <li>Leaflet</li>
+                        <li>OpenLayers</li>
+                        <li>ArcGIS</li>
+                        <li>空间数据分析</li>
+                        <li>地图可视化</li>
+                    </ul>
+                </div>
+            </div>
         </div>
+    </section>
+    
+    <div class="container">
+        <section id="about">
+            <div class="section-title">
+                <h2>关于我</h2>
+                <p>我的背景和专业经历</p>
+            </div>
+            
+            <div class="project-card" style="max-width: 800px; margin: 0 auto;">
+                <div class="project-content">
+                    <h3>Bob Zheng</h3>
+                    <p>我是一名软件工程师，拥有电气工程和金融背景。我热衷于技术创新和解决实际问题，具有丰富的Web开发、GIS技术应用和云服务实践经验。</p>
+                    <p>在我的职业生涯中，我参与开发了多个复杂的应用系统，擅长将创新技术应用于实际业务场景，提供高效、可扩展的解决方案。</p>
+                    <p>我不断学习新技术和方法，保持对技术发展趋势的敏感度，并乐于分享我的经验和知识。</p>
+                    <div class="project-links" style="justify-content: center; margin-top: 1.5rem;">
+                        <a href="about/index.html" class="project-link">了解更多</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="contact" class="contact-section">
+            <div class="section-title">
+                <h2>联系我</h2>
+                <p>如果您有项目合作或其他问题，请随时联系我</p>
+            </div>
+            
+            <div class="contact-form">
+                <form>
+                    <div class="form-group">
+                        <label for="name">姓名</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">邮箱</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">消息</label>
+                        <textarea id="message" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">发送消息</button>
+                </form>
+            </div>
+        </section>
     </div>
     
     <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>About DevBlog</h3>
-                    <p>A personal blog focused on software development, GIS technology, and professional growth in the tech industry.</p>
+                    <h3>Bob Zheng</h3>
+                    <p>软件工程师 | GIS技术专家 | 云服务实践者</p>
                 </div>
                 
                 <div class="footer-section">
-                    <h3>Quick Links</h3>
+                    <h3>快速链接</h3>
                     <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Articles</a></li>
-                        <li><a href="#">Projects</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="#projects">项目</a></li>
+                        <li><a href="#skills">技能</a></li>
+                        <li><a href="about/index.html">关于我</a></li>
+                        <li><a href="#contact">联系方式</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-section">
-                    <h3>Connect</h3>
+                    <h3>社交媒体</h3>
                     <ul class="social-links">
-                        <li><a href="#">GitHub</a></li>
-                        <li><a href="#">LinkedIn</a></li>
-                        <li><a href="#">Twitter</a></li>
+                        <li><a href="https://github.com/" target="_blank">GitHub</a></li>
+                        <li><a href="https://linkedin.com/" target="_blank">LinkedIn</a></li>
+                        <li><a href="https://twitter.com/" target="_blank">Twitter</a></li>
                     </ul>
                 </div>
             </div>
             
             <div class="copyright">
-                <p>&copy; 2024 DevBlog. All rights reserved.</p>
+                <p>&copy; 2024 Bob Zheng. 保留所有权利。</p>
             </div>
         </div>
     </footer>

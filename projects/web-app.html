@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>响应式Web应用开发 | Bob Zheng</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 85%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* Header styles */
+        header {
+            background-color: #24292e;
+            color: #fff;
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 1.5rem;
+        }
+        
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+        
+        .nav-links a:hover {
+            color: #58a6ff;
+        }
+        
+        /* Project detail styles */
+        .project-header {
+            background: linear-gradient(135deg, #24292e 0%, #0366d6 100%);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+        
+        .project-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .project-meta {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .project-tag {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        
+        .project-content {
+            padding: 3rem 0;
+        }
+        
+        .project-section {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .project-section h2 {
+            color: #24292e;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+        
+        .project-section p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            color: #555;
+        }
+        
+        .project-image {
+            width: 100%;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+        }
+        
+        .features-list {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+        
+        .features-list li {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .features-list li::before {
+            content: "✓";
+            color: #0366d6;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        
+        .tech-item {
+            background-color: #f1f8ff;
+            color: #0366d6;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+        
+        .project-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary {
+            background-color: #24292e;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: #0366d6;
+            transform: translateY(-3px);
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            color: #24292e;
+            border: 2px solid #24292e;
+        }
+        
+        .btn-secondary:hover {
+            background-color: rgba(36, 41, 46, 0.1);
+            transform: translateY(-3px);
+        }
+        
+        /* Footer styles */
+        footer {
+            background-color: #24292e;
+            color: #fff;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+        
+        .footer-section p, 
+        .footer-section li {
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+        
+        .social-links {
+            list-style: none;
+            display: flex;
+        }
+        
+        .social-links li {
+            margin-right: 1rem;
+        }
+        
+        .social-links a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: #58a6ff;
+        }
+        
+        .copyright {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid #3a3f43;
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+        
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .project-header h1 {
+                font-size: 2rem;
+            }
+            
+            .project-section h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <img src="https://github.com/identicons/bob.png" alt="Bob Zheng">
+                    <a href="../index.html" style="color: white; text-decoration: none;">Bob Zheng</a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="../index.html#projects">项目</a></li>
+                    <li><a href="../index.html#skills">技能</a></li>
+                    <li><a href="../index.html#about">关于我</a></li>
+                    <li><a href="../index.html#contact">联系方式</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="project-header">
+        <div class="container">
+            <h1>响应式Web应用开发</h1>
+            <div class="project-meta">
+                <span class="project-tag">React</span>
+                <span class="project-tag">Node.js</span>
+                <span class="project-tag">MongoDB</span>
+                <span class="project-tag">2024年项目</span>
+            </div>
+        </div>
+    </section>
+    
+    <div class="container">
+        <div class="project-content">
+            <div class="project-section">
+                <h2>项目概述</h2>
+                <p>这是一个基于现代JavaScript框架构建的响应式Web应用程序，实现了组件化架构和高效的状态管理。该项目旨在提供用户友好的界面和流畅的用户体验，同时确保代码的可维护性和可扩展性。</p>
+                <p>项目采用了React.js作为前端框架，Node.js和Express作为后端服务，MongoDB作为数据库，实现了完整的全栈开发流程。</p>
+                <img src="https://via.placeholder.com/1200x600?text=Web+Application+Screenshot" alt="项目截图" class="project-image">
+            </div>
+            
+            <div class="project-section">
+                <h2>核心功能</h2>
+                <ul class="features-list">
+                    <li>用户身份验证和授权系统</li>
+                    <li>响应式界面设计，适配各种设备尺寸</li>
+                    <li>实时数据更新和通知功能</li>
+                    <li>高效的状态管理和数据流控制</li>
+                    <li>优化的API请求和数据缓存</li>
+                    <li>完整的错误处理和用户反馈机制</li>
+                </ul>
+            </div>
+            
+            <div class="project-section">
+                <h2>技术栈</h2>
+                <p>本项目采用了现代Web开发的最佳实践和工具链：</p>
+                <div class="tech-stack">
+                    <span class="tech-item">React 18</span>
+                    <span class="tech-item">Redux Toolkit</span>
+                    <span class="tech-item">Node.js</span>
+                    <span class="tech-item">Express</span>
+                    <span class="tech-item">MongoDB</span>
+                    <span class="tech-item">Mongoose</span>
+                    <span class="tech-item">JWT认证</span>
+                    <span class="tech-item">SASS/SCSS</span>
+                    <span class="tech-item">Webpack</span>
+                    <span class="tech-item">Jest & React Testing Library</span>
+                </div>
+                <p>前端采用了组件化的开发方式，使用Redux进行状态管理，配合React Hooks实现逻辑复用。后端则采用RESTful API设计，使用MongoDB作为数据存储，实现了高效的数据处理和查询。</p>
+            </div>
+            
+            <div class="project-section">
+                <h2>开发过程</h2>
+                <p>项目采用敏捷开发方法，通过迭代开发和持续集成确保代码质量和项目进度：</p>
+                <ol style="margin-left: 1.5rem;">
+                    <li>需求分析与设计规划</li>
+                    <li>前端UI组件设计与开发</li>
+                    <li>后端服务与API开发</li>
+                    <li>数据库设计与集成</li>
+                    <li>功能测试与性能优化</li>
+                    <li>部署与持续集成</li>
+                </ol>
+                <p>在开发过程中，我重点关注代码质量和性能优化，使用了代码审查、自动化测试和性能监控等手段保证应用的稳定性和响应速度。</p>
+            </div>
+            
+            <div class="project-section">
+                <h2>项目成果</h2>
+                <p>通过本项目，成功实现了：</p>
+                <ul class="features-list">
+                    <li>提高用户体验满意度达80%以上</li>
+                    <li>页面加载速度相比传统应用提升40%</li>
+                    <li>代码维护成本显著降低</li>
+                    <li>系统可扩展性大幅提高</li>
+                </ul>
+                <div class="project-links">
+                    <a href="#" class="btn btn-primary">查看在线演示</a>
+                    <a href="https://github.com/" class="btn btn-secondary">查看源代码</a>
+                    <a href="../index.html#projects" class="btn btn-secondary">返回项目列表</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Bob Zheng</h3>
+                    <p>软件工程师 | GIS技术专家 | 云服务实践者</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>快速链接</h3>
+                    <ul>
+                        <li><a href="../index.html#projects">项目</a></li>
+                        <li><a href="../index.html#skills">技能</a></li>
+                        <li><a href="../index.html#about">关于我</a></li>
+                        <li><a href="../index.html#contact">联系方式</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>社交媒体</h3>
+                    <ul class="social-links">
+                        <li><a href="https://github.com/" target="_blank">GitHub</a></li>
+                        <li><a href="https://linkedin.com/" target="_blank">LinkedIn</a></li>
+                        <li><a href="https://twitter.com/" target="_blank">Twitter</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2024 Bob Zheng. 保留所有权利。</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html> 
