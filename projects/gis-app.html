@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GIS应用与Web技术集成 | Bob Zheng</title>
+    <title>GIS Applications with Web Technology | Bob Zheng</title>
     <style>
         * {
             box-sizing: border-box;
@@ -306,10 +306,10 @@
                     <a href="../index.html" style="color: white; text-decoration: none;">Bob Zheng</a>
                 </div>
                 <ul class="nav-links">
-                    <li><a href="../index.html#projects">项目</a></li>
-                    <li><a href="../index.html#skills">技能</a></li>
-                    <li><a href="../index.html#about">关于我</a></li>
-                    <li><a href="../index.html#contact">联系方式</a></li>
+                    <li><a href="../index.html#projects">Projects</a></li>
+                    <li><a href="../index.html#skills">Skills</a></li>
+                    <li><a href="../about/index.html">About</a></li>
+                    <li><a href="../index.html#contact">Contact</a></li>
                 </ul>
             </nav>
         </div>
@@ -317,12 +317,12 @@
     
     <section class="project-header">
         <div class="container">
-            <h1>GIS应用与Web技术集成</h1>
+            <h1>GIS Applications with Web Technology</h1>
             <div class="project-meta">
                 <span class="project-tag">Leaflet</span>
                 <span class="project-tag">Python</span>
                 <span class="project-tag">PostgreSQL</span>
-                <span class="project-tag">空间数据分析</span>
+                <span class="project-tag">Spatial Data Analysis</span>
             </div>
         </div>
     </section>
@@ -330,30 +330,30 @@
     <div class="container">
         <div class="project-content">
             <div class="project-section">
-                <h2>项目概述</h2>
-                <p>这是一个结合现代Web技术开发的地理信息系统应用，实现了交互式地图功能和高效的空间数据处理。该项目旨在提供直观的地理数据可视化和分析工具，帮助用户更好地理解和利用空间数据。</p>
-                <p>项目采用了Leaflet作为前端地图库，Python进行后端数据处理，PostgreSQL(PostGIS)作为空间数据库，构建了完整的GIS Web应用架构。</p>
+                <h2>Project Overview</h2>
+                <p>This is a geographic information system application integrated with modern web technologies, featuring interactive mapping capabilities and efficient spatial data processing. The project aims to provide intuitive geographic data visualization and analysis tools to help users better understand and utilize spatial data.</p>
+                <p>The project uses Leaflet as the frontend mapping library, Python for backend data processing, and PostgreSQL (PostGIS) as the spatial database, building a complete GIS web application architecture.</p>
                 <div class="map-showcase">
-                    <img src="https://via.placeholder.com/1200x600?text=GIS+Application+Map+View" alt="GIS应用地图界面" class="project-image">
+                    <img src="https://via.placeholder.com/1200x600?text=GIS+Application+Map+View" alt="GIS Application Map Interface" class="project-image">
                 </div>
             </div>
             
             <div class="project-section">
-                <h2>核心功能</h2>
+                <h2>Core Features</h2>
                 <ul class="features-list">
-                    <li>多图层管理和控制</li>
-                    <li>空间数据查询和筛选</li>
-                    <li>地理编码和逆地理编码</li>
-                    <li>热力图和聚类分析</li>
-                    <li>空间数据导入/导出（GeoJSON, Shapefile等）</li>
-                    <li>用户自定义地图样式和主题</li>
-                    <li>路径分析和网络规划</li>
+                    <li>Multi-layer management and control</li>
+                    <li>Spatial data query and filtering</li>
+                    <li>Geocoding and reverse geocoding</li>
+                    <li>Heatmap and cluster analysis</li>
+                    <li>Spatial data import/export (GeoJSON, Shapefile, etc.)</li>
+                    <li>User-defined map styles and themes</li>
+                    <li>Path analysis and network planning</li>
                 </ul>
             </div>
             
             <div class="project-section">
-                <h2>技术栈</h2>
-                <p>本项目采用了现代GIS和Web开发的最佳实践和工具：</p>
+                <h2>Technology Stack</h2>
+                <p>This project employs best practices and tools for modern GIS and web development:</p>
                 <div class="tech-stack">
                     <span class="tech-item">Leaflet</span>
                     <span class="tech-item">Mapbox</span>
@@ -366,45 +366,45 @@
                     <span class="tech-item">Turf.js</span>
                     <span class="tech-item">Docker</span>
                 </div>
-                <p>前端使用Leaflet构建交互式地图界面，支持多种地图服务和数据源。后端采用Python和Flask提供API服务，使用GeoPandas和GDAL进行空间数据处理。数据存储使用了PostgreSQL和PostGIS，提供强大的空间查询和分析能力。</p>
+                <p>The frontend uses Leaflet to build interactive map interfaces, supporting various map services and data sources. The backend uses Python and Flask to provide API services, with GeoPandas and GDAL for spatial data processing. Data storage uses PostgreSQL and PostGIS, providing powerful spatial query and analysis capabilities.</p>
             </div>
             
             <div class="project-section">
-                <h2>技术挑战与解决方案</h2>
-                <h3 style="margin: 1rem 0; font-size: 1.3rem; color: #2a9d8f;">大规模空间数据处理</h3>
-                <p>项目需要处理数百万条地理数据记录，面临性能挑战。解决方案包括：</p>
+                <h2>Technical Challenges and Solutions</h2>
+                <h3 style="margin: 1rem 0; font-size: 1.3rem; color: #2a9d8f;">Large-Scale Spatial Data Processing</h3>
+                <p>The project needed to handle millions of geographic data records, facing performance challenges. Solutions included:</p>
                 <ul class="features-list">
-                    <li>实现空间索引优化查询性能</li>
-                    <li>数据分层策略，根据缩放级别显示不同精度数据</li>
-                    <li>服务端预处理和缓存机制</li>
-                    <li>客户端数据分块加载</li>
+                    <li>Implementing spatial indexes to optimize query performance</li>
+                    <li>Data layering strategy, displaying different accuracy data based on zoom levels</li>
+                    <li>Server-side preprocessing and caching mechanisms</li>
+                    <li>Client-side data chunk loading</li>
                 </ul>
                 
-                <h3 style="margin: 1rem 0; font-size: 1.3rem; color: #2a9d8f;">复杂空间分析</h3>
-                <p>实现了多种复杂的空间分析功能：</p>
+                <h3 style="margin: 1rem 0; font-size: 1.3rem; color: #2a9d8f;">Complex Spatial Analysis</h3>
+                <p>Implemented various complex spatial analysis functions:</p>
                 <ul class="features-list">
-                    <li>基于时空数据的热力图和密度分析</li>
-                    <li>多因素空间相关性分析</li>
-                    <li>自定义区域统计和聚合</li>
+                    <li>Heatmap and density analysis based on spatiotemporal data</li>
+                    <li>Multi-factor spatial correlation analysis</li>
+                    <li>Custom regional statistics and aggregation</li>
                 </ul>
                 
-                <img src="https://via.placeholder.com/1200x600?text=Spatial+Analysis+Results" alt="空间分析结果" class="project-image">
+                <img src="https://via.placeholder.com/1200x600?text=Spatial+Analysis+Results" alt="Spatial Analysis Results" class="project-image">
             </div>
             
             <div class="project-section">
-                <h2>项目成果</h2>
-                <p>通过本项目，成功实现了：</p>
+                <h2>Project Results</h2>
+                <p>Through this project, we successfully achieved:</p>
                 <ul class="features-list">
-                    <li>支持每日处理百万级空间数据点</li>
-                    <li>地图渲染速度提升60%</li>
-                    <li>空间分析执行效率提高75%</li>
-                    <li>系统响应时间降低至300ms以内</li>
+                    <li>Support for processing millions of spatial data points daily</li>
+                    <li>Map rendering speed increased by 60%</li>
+                    <li>Spatial analysis execution efficiency improved by 75%</li>
+                    <li>System response time reduced to under 300ms</li>
                 </ul>
-                <p>该GIS应用已成功应用于城市规划、环境监测和交通分析等多个领域，帮助相关机构和组织更高效地进行空间决策。</p>
+                <p>This GIS application has been successfully applied in various fields including urban planning, environmental monitoring, and traffic analysis, helping relevant organizations make more efficient spatial decisions.</p>
                 <div class="project-links">
-                    <a href="#" class="btn btn-primary">查看在线演示</a>
-                    <a href="https://github.com/" class="btn btn-secondary">查看源代码</a>
-                    <a href="../index.html#projects" class="btn btn-secondary">返回项目列表</a>
+                    <a href="#" class="btn btn-primary">View Live Demo</a>
+                    <a href="https://github.com/" class="btn btn-secondary">View Source Code</a>
+                    <a href="../index.html#projects" class="btn btn-secondary">Back to Projects</a>
                 </div>
             </div>
         </div>
@@ -415,21 +415,21 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>Bob Zheng</h3>
-                    <p>软件工程师 | GIS技术专家 | 云服务实践者</p>
+                    <p>Software Engineer | GIS Technology Expert | Cloud Services Practitioner</p>
                 </div>
                 
                 <div class="footer-section">
-                    <h3>快速链接</h3>
+                    <h3>Quick Links</h3>
                     <ul>
-                        <li><a href="../index.html#projects">项目</a></li>
-                        <li><a href="../index.html#skills">技能</a></li>
-                        <li><a href="../index.html#about">关于我</a></li>
-                        <li><a href="../index.html#contact">联系方式</a></li>
+                        <li><a href="../index.html#projects">Projects</a></li>
+                        <li><a href="../index.html#skills">Skills</a></li>
+                        <li><a href="../index.html#about">About</a></li>
+                        <li><a href="../index.html#contact">Contact</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-section">
-                    <h3>社交媒体</h3>
+                    <h3>Social Media</h3>
                     <ul class="social-links">
                         <li><a href="https://github.com/" target="_blank">GitHub</a></li>
                         <li><a href="https://linkedin.com/" target="_blank">LinkedIn</a></li>
@@ -439,7 +439,7 @@
             </div>
             
             <div class="copyright">
-                <p>&copy; 2024 Bob Zheng. 保留所有权利。</p>
+                <p>&copy; 2024 Bob Zheng. All rights reserved.</p>
             </div>
         </div>
     </footer>
