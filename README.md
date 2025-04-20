@@ -32,20 +32,7 @@ This repository contains the code for my personal portfolio website, showcasing 
 - Responsive Design Techniques
 - GitHub Pages for hosting
 
-## Setup
 
-To view this website locally:
-
-1. Clone this repository
-```bash
-git clone https://github.com/bob/Bob.github.io.git
-```
-
-2. Open the index.html file in your browser
-```bash
-cd Bob.github.io
-open index.html
-```
 
 ## Deployment
 
@@ -63,8 +50,4 @@ This website is deployed using GitHub Pages and can be accessed at https://githu
 Feel free to reach out if you have any questions or would like to collaborate on a project:
 
 - Email: zbob0706@gmail.com
-- GitHub: github.com/zbob0706
 
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
