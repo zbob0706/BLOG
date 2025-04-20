@@ -62,9 +62,8 @@ This website is deployed using GitHub Pages and can be accessed at [https://bob.
 
 Feel free to reach out if you have any questions or would like to collaborate on a project:
 
-- Email: contact@bobzheng.com
-- GitHub: [github.com/bob](https://github.com/bob)
-- LinkedIn: [linkedin.com/in/bobzheng](https://linkedin.com/in/bobzheng)
+- Email: zbob0706@gmail.com
+- GitHub: github.com/zbob0706
 
 ## License
 
