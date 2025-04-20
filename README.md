@@ -49,7 +49,7 @@ open index.html
 
 ## Deployment
 
-This website is deployed using GitHub Pages and can be accessed at [https://bob.github.io](https://bob.github.io)
+This website is deployed using GitHub Pages and can be accessed at https://github.com/zbob0706
 
 ## Future Improvements
 
